@@ -2,6 +2,7 @@
 	"name": "react-boilerplate",
 	"version": "1.0.0",
 	"description": "client-side webapp",
+	"private": true,
 	"scripts": {
 		"build": "webpack --mode production",
 		"dev-server": "webpack-dev-server",

@@ -1,4 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+pkg = require('./package.json');
 
 module.exports = {
 	entry: './src/index.coffee',
@@ -30,7 +31,8 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.pug'
+			template: './src/index.pug',
+			description: pkg.description
 		})
 	],
 }
