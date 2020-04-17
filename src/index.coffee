@@ -3,6 +3,6 @@ import ReactDOM from "react-dom"
 
 import './global.sass'
 
-Hello = => <div>Hello React!</div>
+Hello = (props) => <div>Hello {props.name}!</div>
 
-ReactDOM.render <Hello />, document.getElementById "app"
+ReactDOM.render <Hello name="Newbie" />, document.getElementById "app"

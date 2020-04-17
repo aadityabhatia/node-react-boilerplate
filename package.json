@@ -2,10 +2,9 @@
 	"name": "react-boilerplate",
 	"version": "1.0.0",
 	"description": "client-side webapp",
-	"main": "app.js",
 	"scripts": {
 		"build": "webpack --mode production",
-		"devServer": "webpack-dev-server",
+		"dev-server": "webpack-dev-server",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
