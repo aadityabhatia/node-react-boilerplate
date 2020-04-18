@@ -1,8 +1,19 @@
 import React from 'react';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import PrimaryAppBar from './PrimaryAppBar.coffee'
+import ContentGrid from './ContentGrid.coffee'
 
-export default class App extends React.Component
-	constructor: (props) ->
-		super(props)
+darkTheme = createMuiTheme
+	palette:
+		type: 'dark'
 
-	render: ->
-		<h1>It works.</h1>
+export default App = () =>
+	<ThemeProvider theme={darkTheme}>
+		<CssBaseline />
+		<PrimaryAppBar />
+		<Container maxWidth="xl">
+			<ContentGrid />
+		</Container>
+	</ThemeProvider>
