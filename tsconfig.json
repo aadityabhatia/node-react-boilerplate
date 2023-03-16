@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"module": "ES2022",
+		"target": "ES2022",
+		"removeComments": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"jsx": "react-jsx",
+		"noEmit": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		// "outDir": "dist"
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"**/*.spec.ts"
+	],
+	"$schema": "https://json.schemastore.org/tsconfig"
+}

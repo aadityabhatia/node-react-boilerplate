@@ -1,38 +1,36 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-pkg = require('./package.json');
+const pkg = require('./package.json');
+const path = require('path');
 
 module.exports = {
-	entry: './src/index.coffee',
+	entry: './src/index.tsx',
 	module: {
 		rules: [{
-				test: /\.coffee$/,
-				use: [{
-					loader: 'coffee-loader',
-					options: {
-						transpile: {
-							presets: ['@babel/preset-env', '@babel/preset-react']
-						}
-					}
-				}]
-			},
-			{
-				test: /\.pug$/,
-				use: ['pug-loader']
-			},
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					'style-loader',
-					'css-loader',
-					'sass-loader',
-				],
-			},
-		],
+			test: /\.css$/,
+			use: ["css-loader"],
+			exclude: /node_modules/,
+		}, {
+			test: /\.(tsx|jsx|ts|js)?$/,
+			use: "babel-loader",
+			exclude: /node_modules/,
+		}],
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js'],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.pug',
+			template: './src/index.html',
 			description: pkg.description
 		})
 	],
+	output: {
+		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'dist'),
+	},
+	devServer: {
+		static: path.join(__dirname, "dist"),
+		compress: true,
+		port: 4000,
+	},
 }
